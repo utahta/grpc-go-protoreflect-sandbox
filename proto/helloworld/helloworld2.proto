@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package helloworld;
+
+option go_package = "github.com/utahta/grpc-go-protoreflect-example/gen/helloworld;helloworld";
+
+import "option/option.proto";
+
+service Greeter2 {
+  rpc SayHello2 (Hello2Request) returns (Hello2Reply) {
+    option (option.tags) = TAG_B;
+    option (option.tags) = TAG_C;
+    option (option.tags) = TAG_D;
+  }
+}
+
+message Hello2Request {
+  string name = 1;
+}
+
+message Hello2Reply {
+  string message = 1;
+}

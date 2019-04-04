@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package option;
+
+option go_package = "github.com/utahta/grpc-go-protoreflect-example/gen/option;option";
+
+import "google/protobuf/descriptor.proto";
+
+extend google.protobuf.MethodOptions {
+    Tag tag           = 1000;
+    repeated Tag tags = 1001;
+}
+
+enum Tag {
+    TAG_A = 0;
+    TAG_B = 1;
+    TAG_C = 2;
+    TAG_D = 3;
+    TAG_E = 4;
+}
