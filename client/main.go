@@ -115,7 +115,7 @@ func tagEnumDescriptor() (*descriptor.EnumDescriptorProto, error) {
 	}
 
 	idx := idxs[0]
-	if len(fd.GetEnumType()) < idx {
+	if len(fd.GetEnumType()) <= idx {
 		return nil, fmt.Errorf("invalid enum type")
 	}
 	return fd.GetEnumType()[idx], nil
